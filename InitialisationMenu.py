@@ -27,5 +27,6 @@ class Init_Menu():
         print('3')
 
     def actualiserFenetreGraphique(self):
+        pyg.display.flip()
         pyg.display.update()
 

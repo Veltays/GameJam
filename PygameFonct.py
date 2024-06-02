@@ -6,9 +6,11 @@ from CreateButton import *
 class PyFonct:
     def __init__(self):
 
-        self.accueil = pygame.image.load(Const.ECRANACCUEIL)
         self.logo = pygame.image.load(Const.LOGO)
+
+        self.accueil = pygame.image.load(Const.ECRANACCUEIL)
         self.triangle_selection = pygame.image.load(Const.TRIANGLE_SELECTION)
+        self.choixniveau = pygame.image.load(Const.CHOIXNIV)
 
         # Initialisation de pygame
         pygame.init()
@@ -18,9 +20,6 @@ class PyFonct:
 
         pygame.display.set_icon(self.logo)
         self.screen.fill(Const.WHITE)
-
-
-
 
 
     def MouseCOORD(self):
@@ -50,5 +49,5 @@ class PyFonct:
     def actualiserFenetreGraphique(self):
         pygame.display.update()
 
-    def effacerImageInterne(self):
-        self.screen.blit(self.accueil, (0, 0, 1016, 780), (0, 0, Const.WIDTH, Const.HEIGHT))
+    def effacerImageInterne(self,image):
+        self.screen.blit(image, (0, 0, 1016, 780), (0, 0, Const.WIDTH, Const.HEIGHT))

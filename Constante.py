@@ -17,9 +17,14 @@ class Const:
 
 
     #Constante d'image
-    ECRANACCUEIL = "Images/Menu/Accueil.png"
     LOGO = "Images/Autre/Logo.png"
+
+    ECRANACCUEIL = "Images/Menu/Accueil.png"
     TRIANGLE_SELECTION = 'Images/Autre/Triangle.png'
+
+    CHOIXNIV = "Images/Menu/Choix.png"
+
+
 
 
     #COULEURS

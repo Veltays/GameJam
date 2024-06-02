@@ -1,6 +1,4 @@
 import pygame
-import sys
-import os
 
 from CreateButton import *
 from PygameFonct import *
@@ -22,12 +20,10 @@ class Menu:
 
         while True:
 
-            self.PyFonct.RecupererEvenement()
+            point = self.PyFonct.RecupererEvenement()
+            self.ClickMenu(point)
 
-            # self.Hover()
-
-            self.ClickMenu()
-
+            self.Hover()
 
 
             self.PyFonct.actualiserFenetreGraphique()
@@ -37,25 +33,24 @@ class Menu:
         point = self.PyFonct.MouseCOORD()
         if point is not None:
             if self.Button.RangePolygone(Const.BTNPLAY_ACCUEIL, point):
-                self.PyFonct.afficherImage(231, 229,self.PyFonct.triangle_selection)    # x + 4 et y + 8
+                self.PyFonct.afficherImage(231, 229,self.PyFonct.triangle_selection)
 
                 # Afficher le choix de jeu
 
             elif self.Button.RangePolygone(Const.BTNSETTING_ACCUEIL, point):
-                self.PyFonct.afficherImage(231, 344, self.PyFonct.triangle_selection)  # x + 4 et y + 8
+                self.PyFonct.afficherImage(231, 368, self.PyFonct.triangle_selection)
 
             elif self.Button.RangePolygone(Const.BTNQUIT_ACCUEIL, point):
-                self.PyFonct.afficherImage(231, 515, self.PyFonct.triangle_selection)  # x + 4 et y + 8
+                self.PyFonct.afficherImage(231, 515, self.PyFonct.triangle_selection)
             else:
-                self.PyFonct.effacerImageInterne()
+                self.PyFonct.effacerImageInterne(self.PyFonct.accueil)
 
 
-    def ClickMenu(self):
-        point = self.PyFonct.RecupererEvenement()
+    def ClickMenu(self,point):
         if point is not None:
             print(point)
             if self.Button.RangePolygone(Const.BTNPLAY_ACCUEIL, point):
-                self.PyFonct.afficherImage(231, 229, self.PyFonct.triangle_selection)    # x + 4 et y + 8
+                self.PyFonct.effacerImageInterne(self.PyFonct.choixniveau)
 
                 # Afficher le choix de jeu
 
@@ -63,6 +58,4 @@ class Menu:
                 self.PyFonct.afficherImage(231, 344, self.PyFonct.triangle_selection)  # x + 4 et y + 8
 
             elif self.Button.RangePolygone(Const.BTNQUIT_ACCUEIL, point):
-                pygame.quit()
-            else:
-                self.PyFonct.effacerImageInterne()
+                exit()
