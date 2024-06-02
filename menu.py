@@ -31,7 +31,7 @@ class Menu:
         point = self.PyFonct.MouseCOORD()
         if point is not None:
             if self.PyFonct.RangePolygone(Const.BTNPLAY_ACCUEIL, point):
-                self.PyFonct.afficherImage(231, 229,self.PyFonct.triangle_selection)
+                self.PyFonct.afficherImage(231, 229, self.PyFonct.triangle_selection)
 
             elif self.PyFonct.RangePolygone(Const.BTNSETTING_ACCUEIL, point):
                 self.PyFonct.afficherImage(231, 368, self.PyFonct.triangle_selection)

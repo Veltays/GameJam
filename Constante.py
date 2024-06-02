@@ -7,6 +7,7 @@ class Const:
     BTNQUIT_ACCUEIL =    [(324, 502), (694, 502), (667, 553), (694, 602), (324, 602), (357, 553)]
     BTNMUSIQUE_ACCUEIL = [(867, 673), (974, 673), (974, 715), (867, 715)]
 
+
     # Dessin de chaque forme de l'accueil
     n = 136
     CHOIXCRACKEAD = [(195, 238), (248, 223), (281, 180), (499, 193), (714, 180), (745, 223), (776, 238), (745, 256), (714, 300), (499, 293), (281, 300), (248, 259)]
@@ -32,9 +33,9 @@ class Const:
 
     CHOIXNIV = "Images/Menu/Choix.png"
 
+    HOVERBACKCHOIX = "Images/Menu/HoverBack.png"
 
-
-
+    HOVERCHOIX = "Images/Menu/HoverChoix.png"
 
 
     #COULEURS

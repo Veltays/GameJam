@@ -14,6 +14,9 @@ class PyFonct:
         self.triangle_selection = pygame.image.load(Const.TRIANGLE_SELECTION)
         self.choixniveau = pygame.image.load(Const.CHOIXNIV)
 
+        self.BackChoixHover = pygame.image.load(Const.HOVERBACKCHOIX)
+        self.choixHover = pygame.image.load(Const.HOVERCHOIX)
+
 
 
 
