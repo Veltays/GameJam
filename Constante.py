@@ -36,6 +36,8 @@ class Const:
     HOVERBACKCHOIX = "Images/Menu/HoverBack.png"
 
     HOVERCHOIX = "Images/Menu/HoverChoix.png"
+    HOVERACCUEIL = "Images/Menu/HoverAccueil.png"
+    HOVERMUSIQE = "Images/Menu/HoverMusique.png"
 
 
     #COULEURS

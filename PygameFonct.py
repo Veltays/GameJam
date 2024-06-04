@@ -16,6 +16,8 @@ class PyFonct:
 
         self.BackChoixHover = pygame.image.load(Const.HOVERBACKCHOIX)
         self.choixHover = pygame.image.load(Const.HOVERCHOIX)
+        self.accueilHover = pygame.image.load(Const.HOVERACCUEIL)
+        self.musiqueHover = pygame.image.load(Const.HOVERMUSIQE)
 
 
 
@@ -28,6 +30,8 @@ class PyFonct:
         pygame.display.set_caption("Menu")
         # Icone de la fenetre
         pygame.display.set_icon(self.logo)
+
+        self.screen.fill(Const.WHITE)
 
     def MouseCOORD(self):
         return pygame.mouse.get_pos()

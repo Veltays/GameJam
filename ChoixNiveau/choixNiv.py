@@ -1,5 +1,6 @@
 from Constante import *
 from PygameFonct import *
+from CrackheadSIM.CrackheadSIM import *
 import pygame
 
 
@@ -11,7 +12,9 @@ class ChoixLVL:
 
         def __init__(self):
             self.PyFonct = PyFonct()
+            self.Crackhead = Crackhead()
             self.BoucleLVL = True
+
         def demarer(self):
             while self.BoucleLVL:
                 self.PyFonct.effacerImageInterne(self.PyFonct.choixniveau)
@@ -28,6 +31,7 @@ class ChoixLVL:
                     print(point)
                     if self.PyFonct.RangePolygone(Const.CHOIXCRACKEAD, point):
                         print("Bouton Crackhead Tycoon")
+                        self.Crackhead.run_Crackhead()
 
                     elif self.PyFonct.RangePolygone(Const.CHOIXPARC, point):
                         print("Bouton Parc simulator")
