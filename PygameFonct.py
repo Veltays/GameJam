@@ -2,13 +2,13 @@ import pygame
 from Constante import *
 
 
-
 class PyFonct:
     def __init__(self):
-
-        # -------------------------------------------------------------------------------------------------------------
-        # -----------------------------Chargement des images ---------------------------------
-        # -----------------------------Relatif au Menu et la fenetre ---------------------------------
+        # Initialisation de pygame
+        pygame.init()
+        # --------------------------------------------------------------------------------------------------------------
+        # -----------------------------Chargement des images -----------------------------------------------------------
+        # -----------------------------Relatif au Menu et la fenetre ---------
         self.logo = pygame.image.load(Const.LOGO)
         self.accueil = pygame.image.load(Const.ECRANACCUEIL)
         self.triangle_selection = pygame.image.load(Const.TRIANGLE_SELECTION)
@@ -19,46 +19,38 @@ class PyFonct:
         self.accueilHover = pygame.image.load(Const.HOVERACCUEIL)
         self.musiqueHover = pygame.image.load(Const.HOVERMUSIQE)
 
+        # ----------------------------Relatif au jeu cracksim------------------
+        self.crackheadFOND = pygame.image.load(Const.JEUCRACKED)
 
-
-
-        # Initialisation de pygame
-        pygame.init()
-        # Dimensions de la fenêtre
+        # ---------------------------Reste du bordel--------------------------------------------------------------------
+        # ---------------------------Dimensions de la fenêtre----------------
         self.screen = pygame.display.set_mode((Const.WIDTH, Const.HEIGHT))
-        # Nom de la fenetre
+        # ---------------------------Nom de la fenetre----------------------
         pygame.display.set_caption("Menu")
-        # Icone de la fenetre
+        # ---------------------------Icone de la fenetre----------------------
         pygame.display.set_icon(self.logo)
 
-        self.screen.fill(Const.WHITE)
-
-    def MouseCOORD(self):
+    def mouseCOORD(self):
         return pygame.mouse.get_pos()
 
-
-    def RecupererEvenementSouris(self):
+    def recupererEvenementSouris(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                return event.pos
+                if event.button == pygame.BUTTON_LEFT:
+                    return event.pos
 
-    def RecupererEvenementClavier(self):
+    def recupererEvenementClavier(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     return event.key
-
-
-
-    def AjouterFondMenuON(self):
-        self.screen.blit(self.accueil, (0, 0))
-
-    def AjouterFondMenuOFF(self):
-        self.screen.blit(self.accueil, (0, 0))
+                elif event.key == pygame.K_ESCAPE:
+                    return event.key
+                return event.key
 
     def afficherImage(self, x, y, image):
         rect = image.get_rect()
@@ -66,15 +58,10 @@ class PyFonct:
         rect.y = y
         self.screen.blit(image, rect)
 
-
-
-    def Dessin(self,ConstFORME):
+    def dessin(self, ConstFORME):
         pygame.draw.polygon(self.screen, Const.WHITE, ConstFORME)
 
-
-
-
-    def RangePolygone(self,polygon, point):
+    def rangePolygone(self, polygon, point):
         x, y = point
         num_points = len(polygon)
         j = num_points - 1
@@ -89,13 +76,12 @@ class PyFonct:
 
         return inside
 
-
-    def AfficherAccueil(self):
+    def afficherAccueil(self):
         self.afficherImage(0, 0, Const.ECRANACCUEIL)
         self.actualiserFenetreGraphique()
 
     def actualiserFenetreGraphique(self):
-        pygame.display.update()
+        pygame.display.flip()
 
-    def effacerImageInterne(self,image):
+    def effacerImageInterne(self, image):
         self.screen.blit(image, (0, 0, 1016, 780), (0, 0, Const.WIDTH, Const.HEIGHT))
