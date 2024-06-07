@@ -1,13 +1,13 @@
 import pygame
 from ChoixNiveau.choixNiv import *
-from PygameFonct import *
+from MenuFonct import *
 from Constante import *
 import time
 
 class Menu:
     def __init__(self):
         self.Const = Const()
-        self.PyFonct = PyFonct()
+        self.MenuFonct = MenuFonct()
         self.choixniv = ChoixLVL()
         self.BTNMUSIQUE = 'ON'
 
@@ -16,53 +16,52 @@ class Menu:
         while True:
             self.ClickMenu()
             self.Hover()
-            self.PyFonct.actualiserFenetreGraphique()
+            self.MenuFonct.actualiserFenetreGraphique()
 
     def Hover(self):
-        point = self.PyFonct.mouseCOORD()
+        point = self.MenuFonct.mouseCOORD()
         if point is not None:
-            print(point)
-            if self.PyFonct.rangePolygone(Const.BTNPLAY_ACCUEIL, point):
-                self.PyFonct.afficherImage(231, 229, self.PyFonct.triangle_selection)
-                self.PyFonct.afficherImage(340, 213, self.PyFonct.accueilHover)
+            if self.MenuFonct.rangePolygone(Const.BTNPLAY_ACCUEIL, point):
+                self.MenuFonct.afficherImage(231, 229, self.MenuFonct.triangle_selection)
+                self.MenuFonct.afficherImage(340, 213, self.MenuFonct.accueilHover)
 
-            elif self.PyFonct.rangePolygone(Const.BTNSETTING_ACCUEIL, point):
-                self.PyFonct.afficherImage(231, 368, self.PyFonct.triangle_selection)
-                self.PyFonct.afficherImage(340, 356, self.PyFonct.accueilHover)
+            elif self.MenuFonct.rangePolygone(Const.BTNSETTING_ACCUEIL, point):
+                self.MenuFonct.afficherImage(231, 368, self.MenuFonct.triangle_selection)
+                self.MenuFonct.afficherImage(340, 356, self.MenuFonct.accueilHover)
 
-            elif self.PyFonct.rangePolygone(Const.BTNQUIT_ACCUEIL, point):
-                self.PyFonct.afficherImage(231, 515, self.PyFonct.triangle_selection)
-                self.PyFonct.afficherImage(340, 499, self.PyFonct.accueilHover)
+            elif self.MenuFonct.rangePolygone(Const.BTNQUIT_ACCUEIL, point):
+                self.MenuFonct.afficherImage(231, 515, self.MenuFonct.triangle_selection)
+                self.MenuFonct.afficherImage(340, 499, self.MenuFonct.accueilHover)
 
-            elif self.PyFonct.rangePolygone(Const.BTNMUSIQUE_ACCUEIL, point):
-                self.PyFonct.afficherImage(867, 673, self.PyFonct.musiqueHover)
+            elif self.MenuFonct.rangePolygone(Const.BTNMUSIQUE_ACCUEIL, point):
+                self.MenuFonct.afficherImage(867, 673, self.MenuFonct.musiqueHover)
             else:
-                self.PyFonct.effacerImageInterne(self.PyFonct.accueil)
+                self.MenuFonct.effacerImageInterne(self.MenuFonct.accueil)
 
     def ClickMenu(self):
-        point = self.PyFonct.recupererEvenementSouris()
+        point = self.MenuFonct.recupererCoordonnerClick()
         if point is not None:
-            print(point)
-            if self.PyFonct.rangePolygone(Const.BTNPLAY_ACCUEIL, point):
+            if self.MenuFonct.rangePolygone(Const.BTNPLAY_ACCUEIL, point):
                 self.choixniv.demarer()
                 self.choixniv.BoucleLVL = True
 
-            elif self.PyFonct.rangePolygone(Const.BTNSETTING_ACCUEIL, point):
+            elif self.MenuFonct.rangePolygone(Const.BTNSETTING_ACCUEIL, point):
                 print("Bouton Setting cliquer") # x + 4 et y + 8
 
-            elif self.PyFonct.rangePolygone(Const.BTNMUSIQUE_ACCUEIL, point):
+            elif self.MenuFonct.rangePolygone(Const.BTNMUSIQUE_ACCUEIL, point):
+                print("rentrer")
                 if self.BTNMUSIQUE == 'ON':
                     self.BTNMUSIQUE = 'OFF'
-                    self.PyFonct.accueil = pygame.image.load('Images/Menu/AccueilON.png')
-                    self.PyFonct.effacerImageInterne(self.PyFonct.accueil)
+                    self.MenuFonct.accueil = pygame.image.load('Images/Menu/AccueilOFF.png')
+                    self.MenuFonct.effacerImageInterne(self.MenuFonct.accueil)
 
                 elif self.BTNMUSIQUE == 'OFF':
                     self.BTNMUSIQUE = 'ON'
-                    self.PyFonct.accueil = pygame.image.load('Images/Menu/AccueilOFF.png')
-                    self.PyFonct.effacerImageInterne(self.PyFonct.accueil)
+                    self.MenuFonct.accueil = pygame.image.load('Images/Menu/AccueilON.png')
+                    self.MenuFonct.effacerImageInterne(self.MenuFonct.accueil)
 
-            elif self.PyFonct.rangePolygone(Const.BTNQUIT_ACCUEIL, point):
+            elif self.MenuFonct.rangePolygone(Const.BTNQUIT_ACCUEIL, point):
                 exit()
 
-            self.PyFonct.actualiserFenetreGraphique()
+            self.MenuFonct.actualiserFenetreGraphique()
 

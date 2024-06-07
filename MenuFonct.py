@@ -1,8 +1,9 @@
 import pygame
+
 from Constante import *
 
 
-class PyFonct:
+class MenuFonct:
     def __init__(self):
         # Initialisation de pygame
         pygame.init()
@@ -18,10 +19,6 @@ class PyFonct:
         self.choixHover = pygame.image.load(Const.HOVERCHOIX)
         self.accueilHover = pygame.image.load(Const.HOVERACCUEIL)
         self.musiqueHover = pygame.image.load(Const.HOVERMUSIQE)
-
-        # ----------------------------Relatif au jeu cracksim------------------
-        self.crackheadFOND = pygame.image.load(Const.JEUCRACKED)
-
         # ---------------------------Reste du bordel--------------------------------------------------------------------
         # ---------------------------Dimensions de la fenêtre----------------
         self.screen = pygame.display.set_mode((Const.WIDTH, Const.HEIGHT))
@@ -33,24 +30,13 @@ class PyFonct:
     def mouseCOORD(self):
         return pygame.mouse.get_pos()
 
-    def recupererEvenementSouris(self):
+    def recupererCoordonnerClick(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == pygame.BUTTON_LEFT:
                     return event.pos
-
-    def recupererEvenementClavier(self):
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                exit()
-            elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
-                    return event.key
-                elif event.key == pygame.K_ESCAPE:
-                    return event.key
-                return event.key
 
     def afficherImage(self, x, y, image):
         rect = image.get_rect()
