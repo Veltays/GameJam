@@ -1,4 +1,4 @@
-from Constante import *
+from ConstanteMenu import *
 from MenuFonct import *
 from CrackheadSIM.CrackheadSIM import *
 import pygame

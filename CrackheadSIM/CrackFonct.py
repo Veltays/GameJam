@@ -1,6 +1,6 @@
 import pygame
 
-from Constante import *
+from ConstanteMenu import *
 
 
 
@@ -21,6 +21,7 @@ class FonctionCrack:
         pygame.display.set_caption("CrackHead Tycoon")
         # ---------------------------Icone de la fenetre----------------------
         pygame.display.set_icon(self.logo)
+        self.positionSourisCrack = None
 
     def recupererEvenement(self):
         for event in pygame.event.get():
@@ -28,6 +29,7 @@ class FonctionCrack:
                 exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == pygame.BUTTON_LEFT:
+                    self.positionSourisCrack = event.pos
                     return event.button
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:

@@ -1,7 +1,7 @@
 import pygame
 from ChoixNiveau.choixNiv import *
 from MenuFonct import *
-from Constante import *
+from ConstanteMenu import *
 import time
 
 class Menu:

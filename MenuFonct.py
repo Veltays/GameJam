@@ -1,6 +1,6 @@
 import pygame
 
-from Constante import *
+from ConstanteMenu import *
 
 
 class MenuFonct:
