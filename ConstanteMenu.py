@@ -39,9 +39,6 @@ class Const:
     HOVERACCUEIL = "Images/Menu/HoverAccueil.png"
     HOVERMUSIQE = "Images/Menu/HoverMusique.png"
 
-    # Constante d'image du jeu crackhead
-
-    JEUCRACKED = "Images/CrackheadSIM/CrackheadFOND.png"
 
     # COULEURS
     BLACK = (0, 0, 0)

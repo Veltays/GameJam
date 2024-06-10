@@ -1,6 +1,6 @@
 from ConstanteMenu import *
 from MenuFonct import *
-from CrackheadSIM.CrackheadSIM import *
+from JeuCrackheadSIM.CrackheadSIM import *
 import pygame
 
 
